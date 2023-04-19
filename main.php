@@ -33,3 +33,4 @@ while(true)
 //pieņemot ka bāzes valūta ir EUR, ievadīt vērtību/valūtu uz kuru veikt konvertāciju (piem. USD).
 //Tā tad ievadot - 100 un USD, tiek pārveidoti 100 EUR uz 100 USD
 //Izmantojot https://www.latvijasbanka.lv/vk/ecb.xml piedāvāto XML datu ieguvei.
+//new but not improved
