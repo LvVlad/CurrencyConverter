@@ -1,6 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 while(true)
 {
@@ -12,16 +12,18 @@ while(true)
     echo '[3] - Exit.'.PHP_EOL;
 
     $input = (int) readline();
+    $exchangeRequest = new \App\Exchange();
 
     switch ($input)
     {
         case 1:
             $amount = (int) readline('Enter amount of euro you want to exchange: ');
             $currency = readline('Choose currency you want convert to (USD, GBP, ...): ');
-
+            echo 'Exchange result: '.$exchangeRequest->exchange($amount, $currency).PHP_EOL;
             break;
         case 2:
-
+            $exchangeRequest->displayRates();
+            break;
         case 3:
             echo 'Have a nice day!';
             die;
@@ -29,8 +31,3 @@ while(true)
             echo 'I am not sure what you want.';
     }
 }
-//Izstrādāt programmu, kas pieprasa ievadīt monetāru skaitli (piem. 10.99),
-//pieņemot ka bāzes valūta ir EUR, ievadīt vērtību/valūtu uz kuru veikt konvertāciju (piem. USD).
-//Tā tad ievadot - 100 un USD, tiek pārveidoti 100 EUR uz 100 USD
-//Izmantojot https://www.latvijasbanka.lv/vk/ecb.xml piedāvāto XML datu ieguvei.
-//new but not improved
